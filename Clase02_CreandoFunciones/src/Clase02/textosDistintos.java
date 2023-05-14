@@ -26,11 +26,11 @@ public class textosDistintos {
         Boolean comparacion = cadenasDeTextoDistintas(textoA, textoB);
         System.out.println(comparacion);
 
-        if (comparacion = true){
-            System.out.println("Los textos no coinciden");
-        } else {
-            System.out.println("Los textos coinciden");
-        }
+        //if (comparacion = true){
+        //    System.out.println("Los textos no coinciden");
+        //} else {
+        //    System.out.println("Los textos coinciden");
+        //}
 
     }
 
