@@ -10,8 +10,8 @@ public class Comercio {
         this.nombre = nombre;
         this.direccionWeb = direccionWeb;
     }
-    public registroCliente(){
-        cliente.registrarse();
+    public void registroCliente(){
+
     }
 
 }

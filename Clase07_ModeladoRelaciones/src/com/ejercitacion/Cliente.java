@@ -13,8 +13,8 @@ public class Cliente {
         this.domicilio = domicilio;
         this.telefono = telefono;
     }
-    public registrase(){
-        ;
+    public void agregarPedido(){
+
     }
 
 }
