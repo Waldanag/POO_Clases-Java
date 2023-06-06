@@ -1,5 +1,7 @@
 package Ejercitacion;
 
+import java.util.Objects;
+
 public abstract class Cuenta {
 
     //ATRIBUTOS
@@ -37,4 +39,18 @@ public abstract class Cuenta {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Cuenta cuenta = (Cuenta) o;
+        return numeroCuenta == cuenta.numeroCuenta;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroCuenta);
+    }
 }

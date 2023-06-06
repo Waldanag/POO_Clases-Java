@@ -13,17 +13,27 @@ public class CuentaComitente extends Cuenta{
         setSaldo( informarSaldo() + (monto * (1 - COMISION)) );
     }
 
-    public void extraer(double monto, String contrasenaIngresada) {
-        if (contrasenaIngresada.equals(CNV)){
-            if (informarSaldo() >= monto){
-                setSaldo(informarSaldo() - monto);
-            }
-        }else {
-            double limiteRetiro = saldo * 0.5;
-            if (informarSaldo() >= monto){
-                setSaldo(informarSaldo() - monto);
-            }
-        }
+    @Override
+    public void extraer(double monto) {
 
     }
+
+    @Override
+    public void extraer(double monto, String contrasenaIngresada) {
+
+        if (informarSaldo() >= monto) {
+            if (contrasenaIngresada.equals(CNV)){
+                setSaldo(informarSaldo() - monto);
+            } else {
+                double limiteRetiro = (informarSaldo() * 0.5);
+                if (limiteRetiro >= monto){
+                    setSaldo(informarSaldo() - monto);
+                }
+            }
+        }
+    }
+
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class Impresora {
     private String modelo;
@@ -47,6 +48,21 @@ public abstract class Impresora {
 
     public void setPorcentajeTinta(double porcentajeTinta) {
         this.porcentajeTinta = porcentajeTinta;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Impresora impresora = (Impresora) o;
+        return Objects.equals(modelo, impresora.modelo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(modelo);
     }
 
     @Override
